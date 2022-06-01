@@ -1,3 +1,5 @@
+// import car
+const {Car} = require('./car');
 
 // dealership constructor
 const Dealership = function (name, maxCars, carsInStock) {

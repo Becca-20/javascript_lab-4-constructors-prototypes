@@ -16,7 +16,4 @@ Dealership.prototype.countCarsInStock = function () {
     return this.carsInStock.length;
 }
 
-// export count cars in stock method
-module.exports = {countCarsInStock};
-
 

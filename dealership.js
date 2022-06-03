@@ -22,7 +22,14 @@ Dealership.prototype.countCarsInStock = function () {
 Dealership.prototype.addCarToStock = function () {
     if (this.countCarsInStock() < this.maxCars) {
         this.carsInStock.push(Car);
+    } else {
+        console.log(`The maximum number of cars at this dealership has been reached, sorry!`);
     }
 }
 
-
+// // return array of each car's manufacturer
+// Dealership.prototype.carManufacturers = function () {
+//     for (manufacturer in Car) {
+//         console.log(manufacturer);
+//     }
+// }

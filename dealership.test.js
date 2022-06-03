@@ -37,22 +37,44 @@ describe('add car to stock', () => {
     // SUCCESS: add car to stock
     test('CAN add car to stock', () => {
 
-    // arrange
-    let name = "Lenny's Cars";
-    let maxCars = 15;
-    let carsInStock = [new Car ("Fiat", 100, "F2"), new Car ("Honda", 50, "H3")];
+        // arrange
+        let name = "Lenny's Cars";
+        let maxCars = 15;
+        let carsInStock = [new Car ("Fiat", 100, "F2"), new Car ("Honda", 50, "H3")];
 
-    let dealership3 = new Dealership (name, maxCars);
-    dealership3.carsInStock = carsInStock;
+        let dealership3 = new Dealership (name, maxCars);
+        dealership3.carsInStock = carsInStock;
 
-    // assert
-    expect(dealership3.countCarsInStock()).toBe(2);
+        // assert
+        expect(dealership3.countCarsInStock()).toBe(2);
 
-    // act
-    dealership3.addCarToStock(new Car ("Toyota", 99, "T4"));
+        // act
+        dealership3.addCarToStock(new Car ("Toyota", 99, "T4"));
 
-    // assert
-    expect(dealership3.countCarsInStock()).toBe(3);
+        // assert
+        expect(dealership3.countCarsInStock()).toBe(3);
+    })
+
+
+    // FAIL: add car to stock
+    test('CANNOT add car to stock', () => {
+
+        // arrange
+        let name = "Ben's Dealership";
+        let maxCars = 2;
+        let carsInStock = [new Car ("Fiat", 100, "F2"), new Car ("Honda", 50, "H3")];
+
+        let dealership4 = new Dealership (name, maxCars);
+        dealership4.carsInStock = carsInStock;
+
+        // assert
+        expect(dealership4.countCarsInStock()).toBe(2);
+
+        // act
+        dealership4.addCarToStock(new Car("Toyota", 99, "T4"));
+
+        // assert
+        expect(dealership4.countCarsInStock()).toBe(2);
     })
 
 })

@@ -8,3 +8,5 @@ const Customer = function (name, wallet, car) {
     this.wallet = wallet;
     this.car = null;
 }
+
+module.exports = {Customer};

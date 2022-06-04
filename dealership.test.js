@@ -78,3 +78,20 @@ describe('add car to stock', () => {
     })
 
 })
+
+
+// print car manufacturers in an array
+test('can print array of car manufacturers in dealership', () => {
+
+    // arrange
+    let name = "Phil's Cars";
+    let maxCars = 30;
+    let carsInStock = [new Car ("Fiat", 100, "F2"), new Car ("Honda", 50, "H3"), new Car ("Range Rover", 8365, "R90")];
+
+    let dealership5 = new Dealership (name, maxCars);
+    dealership5.carsInStock = carsInStock;
+
+    // assert
+    expect(dealership5.carManufacturers.length).toBe(3);
+
+})

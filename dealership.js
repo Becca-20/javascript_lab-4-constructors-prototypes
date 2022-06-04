@@ -27,9 +27,11 @@ Dealership.prototype.addCarToStock = function () {
     }
 }
 
-// // return array of each car's manufacturer
-// Dealership.prototype.carManufacturers = function () {
-//     for (manufacturer in Car) {
-//         console.log(manufacturer);
-//     }
-// }
+// return array of each car's manufacturer
+Dealership.prototype.carManufacturers = function () {
+    let carManResult = [];
+    this.carsInStock.forEach (Car => {
+        carManResult.push(Car.manufacturer);
+    })
+    return carManResult;
+}

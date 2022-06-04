@@ -40,3 +40,11 @@ Dealership.prototype.carManufacturers = function () {
 Dealership.prototype.findCarsByManufacturer = function (manufacturer) {
     return this.carsInStock.filter(Car => Car.manufacturer == manufacturer);
 }
+
+// find total value of all cars in stock
+Dealership.prototype.totalValueOfStock = function () {
+        return this.carsInStock
+        .map (Car => Car.price)
+        .reduce ((reducer, price) => reducer + price, 0);
+
+}

@@ -108,6 +108,22 @@ test('can find cars from a given manufacturer', () => {
     let dealership6 = new Dealership (name, maxCars);
     dealership6.carsInStock = carsInStock;
 
-    // act
+    // assert
     expect(dealership6.findCarsByManufacturer("Fiat").length).toBe(2);
+})
+
+
+// get total value of cars in stock
+test('can find total value of cars in stock', () => {
+
+    // arrange
+    let name = "Mary's Motors";
+    let maxCars = 500;
+    let carsInStock = [new Car ("Fiat", 100, "F2"), new Car ("Honda", 50, "H3"), new Car ("Range Rover", 8365, "R90"), new Car ("Fiat", 839, "F5")];
+
+    let dealership7 = new Dealership (name, maxCars);
+    dealership7.carsInStock = carsInStock;
+
+    // assert
+    expect(dealership7.totalValueOfStock()).toBe(9354);
 })

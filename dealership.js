@@ -35,3 +35,8 @@ Dealership.prototype.carManufacturers = function () {
     })
     return carManResult;
 }
+
+// find all the cars from a given manufacturer
+Dealership.prototype.findCarsByManufacturer = function (manufacturer) {
+    return this.carsInStock.filter(Car => Car.manufacturer == manufacturer);
+}

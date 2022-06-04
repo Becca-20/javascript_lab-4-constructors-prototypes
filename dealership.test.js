@@ -95,3 +95,19 @@ test('can print array of car manufacturers in dealership', () => {
     expect(dealership5.carManufacturers().length).toBe(3);
 
 })
+
+
+// find cars from a given manufacturer
+test('can find cars from a given manufacturer', () => {
+    
+    // arrange
+    let name = "Joe's Jumble";
+    let maxCars = 20;
+    let carsInStock = [new Car ("Fiat", 100, "F2"), new Car ("Honda", 50, "H3"), new Car ("Range Rover", 8365, "R90"), new Car ("Fiat", 839, "F5")];
+
+    let dealership6 = new Dealership (name, maxCars);
+    dealership6.carsInStock = carsInStock;
+
+    // act
+    expect(dealership6.findCarsByManufacturer("Fiat").length).toBe(2);
+})

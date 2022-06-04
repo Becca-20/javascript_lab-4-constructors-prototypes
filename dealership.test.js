@@ -92,6 +92,6 @@ test('can print array of car manufacturers in dealership', () => {
     dealership5.carsInStock = carsInStock;
 
     // assert
-    expect(dealership5.carManufacturers.length).toBe(3);
+    expect(dealership5.carManufacturers().length).toBe(3);
 
 })
